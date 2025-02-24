@@ -3,7 +3,6 @@
   import '../aframe/hide-in-vr.js';
   import '../aframe/simple-navmesh-constraint.js';
   import '../aframe/blink-controls.js';
-  import '../aframe/physx-grab.js';
 </script>
 
 <template>
@@ -25,10 +24,11 @@
           geometry="primitive: circle; radius: 0.0003;"
           material="shader: flat; color: white;"
           cursor
-          raycaster="far: 4; objects: [clickable]; showLine: false;"
+          raycaster="far: 1; objects: [clickable]; showLine: false;"
           position="0 0 -0.1"
           disable-in-vr="component: raycaster; disableInAR: false;"
           hide-in-vr="hideInAR: false"
+          obb-collider
         ></a-entity>
         <a-entity
           id="dummy-hand-right"
@@ -50,12 +50,10 @@
           snapTurn: false;
         "
         position="0 1.5 0"
-        physx-grab
       >
         <a-sphere id="hand-left-collider"
           radius="0.02"
-          visible="false"
-          physx-body="type: kinematic; emitCollisionEvents: true">
+          visible="false">
         </a-sphere>
       </a-entity>
 
@@ -63,14 +61,13 @@
         id="hand-right"
         hand-controls="hand: right"
         laser-controls="hand: right"
-        raycaster="far: 4; objects: [clickable]; showLine: true;"
+        raycaster="far: 1; objects: [clickable]; showLine: true;"
         position="0 1.5 0"
-        physx-grab
+        obb-collider
       >
         <a-sphere id="hand-right-collider"
           radius="0.02"
-          visible="false"
-          physx-body="type: kinematic; emitCollisionEvents: true">
+          visible="false">
         </a-sphere>
       </a-entity>
 
