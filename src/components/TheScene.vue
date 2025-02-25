@@ -6,13 +6,13 @@
 
   import TheCameraRig from './TheCameraRig.vue';
   import TheDashboard from './TheDashboard.vue';
+  import PortalTeleporter from './PortalTeleporter.vue';
   import { positionDucks, ducksVisible, isCollected } from '../stores/duckstore.js';
 
   const allAssetsLoaded = ref(false);
 
   function goThrowDoor() {
     console.log('Go to the bathroom');
-    console.log(camera.getAttribute('position'));
   }
 
   const positionsTeleportation = [
@@ -24,6 +24,7 @@
     {x : -3.81, y : 0 , z : -2.04},
     {x : -3.54, y : 0 , z : -4.7},
     {x : -0.52, y : 0 , z : -4.72},
+    {x : 0.63, y : 0 , z : 2.48},
   ];
 
 </script>
@@ -70,7 +71,7 @@
     <template v-if="allAssetsLoaded">
       <a-box color="red"></a-box>
 
-      <template v-for="(pos) in positionsTeleportation">
+      <!-- <template v-for="(pos) in positionsTeleportation">
         <a-box color="green"
       :position="`${pos.x} ${pos.y} ${pos.z}`"
       scale="2 0.1 2"
@@ -79,9 +80,9 @@
       
     <a-box color="green"
       id="grille-2"
-      position="-0.55 0 -2.04"
+      position="-0.56 0 0"
       scale="2 0.1 2"
-      ></a-box>
+      ></a-box> -->
 
 
       <a-box
@@ -94,14 +95,103 @@
         outline-on-event>
       </a-box>
       
-      <a-box
+      <!-- <a-box
         position="0.42 1.08 1.3"
         material="color: blue"
         scale="1.3 2.1 0.3"
         clickable
         click-handler
         @click="goThrowDoor()">
-      </a-box>
+      </a-box> -->
+
+      
+    <PortalTeleporter
+      position="0.42 1.08 1.15"
+      rotation="0 180 0"
+      :rot="0"
+      :x="0.63"
+      :y="0"
+      :z="2.48"
+      :cameraEffect="false"
+      visible="false"
+    />
+
+    <PortalTeleporter
+      position="0.42 1.08 1.57"
+      rotation="0 0 0"
+      :rot="0"
+      :x="0.63"
+      :y="0"
+      :z="0.35"
+      :cameraEffect="false"
+      visible="false"
+    />
+
+    <PortalTeleporter
+      position="-1.42 1.08 1.15"
+      rotation="0 180 0"
+      :rot="0"
+      :x="-1.63"
+      :y="0"
+      :z="2.48"
+      :cameraEffect="false"
+      visible="false"
+    />
+
+    <PortalTeleporter
+      position="-1.42 1.08 1.57"
+      rotation="0 0 0"
+      :rot="0"
+      :x="-1.63"
+      :y="0"
+      :z="0.35"
+      :cameraEffect="false"
+      visible="false"
+    />
+
+    <PortalTeleporter
+      position="-0.72 1.08 -5.6"
+      rotation="0 0 0"
+      :rot="0"
+      :x="-0.92"
+      :y="0"
+      :z="-6.8"
+      :cameraEffect="false"
+      visible="false"
+    />
+
+    <PortalTeleporter
+      position="-0.72 1.08 -5.95"
+      rotation="0 180 0"
+      :rot="0"
+      :x="-0.92"
+      :y="0"
+      :z="-4.75"
+      :cameraEffect="false"
+      visible="false"
+    />
+
+    <PortalTeleporter
+      position="-4.68 1.08 -2.65"
+      rotation="0 90 0"
+      :rot="0"
+      :x="-5.88"
+      :y="0"
+      :z="-2.45"
+      :cameraEffect="false"
+      visible="false"
+    />
+
+    <PortalTeleporter
+      position="-4.92 1.08 -2.65"
+      rotation="0 -90 0"
+      :rot="0"
+      :x="-4.22"
+      :y="0"
+      :z="-2.45"
+      :cameraEffect="false"
+      visible="false"
+    />
 
       <!-- <a-entity
         id="dashboard"

@@ -31,7 +31,7 @@
 <template>
   <a-entity
     :id="`portal-${id}`"
-    geometry="primitive: circle; radius: 1"
+    geometry="primitive: box; width: 1.3; height: 2.1; depth: 0.1"
     clickable
     :teleport-camera-rig="`
       x: ${x};
