@@ -59,11 +59,10 @@
         </a-sphere>
 
         <a-entity
-          id="dashboard"
-          position="0 0.2 -0.9"
-        >
-          <TheDashboard/>
-        </a-entity>
+        id="dashboard"
+        position="0 0.3 -0.5" rotation="0 0 0">
+         <TheDashboard/>
+      </a-entity>
 
       </a-entity>
 

@@ -2,7 +2,7 @@ import { ref } from 'vue';
 
 export const positionDucks = [
     { x: -0.4, y: 0.88, z: -0.92 },
-    { x: -0.4, y: 0.88, z: -4 },
+    { x: -0.4, y: 0.86, z: -4 },
     { x: 0.4, y: 0.52, z: -1.92 },
   ];
 

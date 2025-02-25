@@ -103,11 +103,11 @@
         @click="goThrowDoor()">
       </a-box>
 
-      <a-entity
+      <!-- <a-entity
         id="dashboard"
-        position="0 0.2 -0.9">
+        position="0 1.47 -0.9">
          <TheDashboard/>
-      </a-entity>
+      </a-entity> -->
 
     </template>
 
