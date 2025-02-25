@@ -8,21 +8,7 @@ import { ducksCollected, ducksTotal } from '../stores/duckstore';
 </script>
 
 <template>
-    <a-box
-      position="-0.01 1.47 -0.05"
-      scale="1.28 0.88 0.04"
-      color="#c965cf"
-      opacity="0.5"
-    ></a-box>
-    <a-text
-      align="center"
-      value="Dashboard"
-      position="0 1.64 0"
-    ></a-text>
-
-    <a-text
-      align="center"
-      :value="ducksCollected + '/' + ducksTotal"
-      position="0 1.4 0"
-    ></a-text>
+    <a-entity gltf-model="#duck-obj" position="-0.4 1.27 -0.08" scale="0.5 0.5 0.5" animation="property: rotation; to: 0 360 0; loop: true; dur: 10000; easing: linear">
+    </a-entity>
+    <a-text align="center" :value="ducksCollected + '/' + ducksTotal" position="0 1.4 0"></a-text>
 </template>
