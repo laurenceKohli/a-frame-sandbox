@@ -26,12 +26,24 @@
     } else {
       cursor.setAttribute('material', 'color', "white");
     }
-    console.log('Canards collectés:', ducksCollected.value);
+    console.log('Canards collectés:', ducksCollected.value, '/', positionDucks.length);
   };
 
   function goThrowDoor() {
     console.log('Go to the bathroom');
+    console.log(camera.getAttribute('position'));
   }
+
+  const positionsTeleportation = [
+    { x: 0.56, y: 0, z: 0 },
+    { x: 0.55, y: 0, z: -2.04 },
+    {x: -3.43, y : 0, z : 0.09},
+    {x : -1.4, y : 0 , z : 0.2},
+    {x : -1.52, y : 0 , z : -2.09},
+    {x : -3.81, y : 0 , z : -2.04},
+    {x : -3.54, y : 0 , z : -4.7},
+    {x : -0.52, y : 0 , z : -4.72},
+  ];
 
 </script>
 
@@ -76,6 +88,20 @@
 
     <template v-if="allAssetsLoaded">
       <a-box color="red"></a-box>
+
+      <template v-for="(pos) in positionsTeleportation">
+        <a-box color="green"
+      :position="`${pos.x} ${pos.y} ${pos.z}`"
+      scale="2 0.1 2"
+      ></a-box>
+      </template>
+      
+    <a-box color="green"
+      id="grille-2"
+      position="-0.55 0 -2.04"
+      scale="2 0.1 2"
+      ></a-box>
+
 
       <a-box
         id="power"
