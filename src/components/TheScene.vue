@@ -108,7 +108,7 @@
     <PortalTeleporter
       position="0.42 1.08 1.15"
       rotation="0 180 0"
-      :rot="0"
+      :rot="180"
       :x="0.63"
       :y="0"
       :z="2.48"
@@ -130,7 +130,7 @@
     <PortalTeleporter
       position="-1.42 1.08 1.15"
       rotation="0 180 0"
-      :rot="0"
+      :rot="180"
       :x="-1.63"
       :y="0"
       :z="2.48"
@@ -163,7 +163,7 @@
     <PortalTeleporter
       position="-0.72 1.08 -5.95"
       rotation="0 180 0"
-      :rot="0"
+      :rot="180"
       :x="-0.92"
       :y="0"
       :z="-4.75"
@@ -174,7 +174,7 @@
     <PortalTeleporter
       position="-4.68 1.08 -2.65"
       rotation="0 90 0"
-      :rot="0"
+      :rot="90"
       :x="-5.88"
       :y="0"
       :z="-2.45"
@@ -185,7 +185,7 @@
     <PortalTeleporter
       position="-4.92 1.08 -2.65"
       rotation="0 -90 0"
-      :rot="0"
+      :rot="-90"
       :x="-4.22"
       :y="0"
       :z="-2.45"
