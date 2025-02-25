@@ -6,7 +6,7 @@
 
   import TheCameraRig from './TheCameraRig.vue';
   import TheDashboard from './TheDashboard.vue';
-  import PortalTeleporter from './PortalTeleporter.vue';
+  import TheDoor from './TheDoor.vue';
   import { positionDucks, ducksVisible, isCollected } from '../stores/duckstore.js';
 
   const allAssetsLoaded = ref(false);
@@ -105,91 +105,83 @@
       </a-box> -->
 
       
-    <PortalTeleporter
+    <TheDoor
       position="0.42 1.08 1.15"
       rotation="0 180 0"
       :rot="180"
       :x="0.63"
       :y="0"
       :z="2.48"
-      :cameraEffect="false"
       visible="false"
     />
 
-    <PortalTeleporter
+    <TheDoor
       position="0.42 1.08 1.57"
       rotation="0 0 0"
       :rot="0"
       :x="0.63"
       :y="0"
       :z="0.35"
-      :cameraEffect="false"
       visible="false"
     />
 
-    <PortalTeleporter
+    <TheDoor
       position="-1.42 1.08 1.15"
       rotation="0 180 0"
       :rot="180"
       :x="-1.63"
       :y="0"
       :z="2.48"
-      :cameraEffect="false"
       visible="false"
     />
 
-    <PortalTeleporter
+    <TheDoor
       position="-1.42 1.08 1.57"
       rotation="0 0 0"
       :rot="0"
       :x="-1.63"
       :y="0"
       :z="0.35"
-      :cameraEffect="false"
       visible="false"
     />
 
-    <PortalTeleporter
+    <TheDoor
       position="-0.72 1.08 -5.6"
       rotation="0 0 0"
       :rot="0"
       :x="-0.92"
       :y="0"
       :z="-6.8"
-      :cameraEffect="false"
       visible="false"
     />
 
-    <PortalTeleporter
+    <TheDoor
       position="-0.72 1.08 -5.95"
       rotation="0 180 0"
       :rot="180"
       :x="-0.92"
       :y="0"
       :z="-4.75"
-      :cameraEffect="false"
       visible="false"
     />
 
-    <PortalTeleporter
+    <TheDoor
       position="-4.68 1.08 -2.65"
       rotation="0 90 0"
       :rot="90"
       :x="-5.88"
       :y="0"
       :z="-2.45"
-      :cameraEffect="false"
       visible="false"
     />
 
-    <PortalTeleporter
+    <TheDoor
       position="-4.92 1.08 -2.65"
       rotation="0 -90 0"
       :rot="-90"
       :x="-4.22"
       :y="0"
       :z="-2.45"
-      :cameraEffect="false"
       visible="false"
     />
 
