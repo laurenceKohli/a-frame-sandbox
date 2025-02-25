@@ -5,29 +5,10 @@
   import '../aframe/outline.js';
 
   import TheCameraRig from './TheCameraRig.vue';
+  import TheDashboard from './TheDashboard.vue';
+  import { positionDucks, ducksVisible, isCollected } from '../stores/duckstore.js';
 
   const allAssetsLoaded = ref(false);
-
-  const positionDucks = [
-    { x: -0.4, y: 0.88, z: -0.92 },
-    { x: -0.4, y: 0.88, z: -4 },
-    { x: 0.4, y: 0.52, z: -1.92 },
-  ];
-
-  const ducksCollected = ref(0);
-  const ducksVisible = ref(positionDucks.map(() => true));
-
-  function isCollected(event, index) {
-    ducksCollected.value++;
-    ducksVisible.value[index] = false;
-    const cursor = event.detail.cursorEl;
-    if (cursor.getAttribute('raycaster').showLine) {
-      cursor.setAttribute('raycaster', 'lineColor', "white");
-    } else {
-      cursor.setAttribute('material', 'color', "white");
-    }
-    console.log('Canards collectés:', ducksCollected.value, '/', positionDucks.length);
-  };
 
   function goThrowDoor() {
     console.log('Go to the bathroom');
@@ -121,6 +102,12 @@
         click-handler
         @click="goThrowDoor()">
       </a-box>
+
+      <a-entity
+        id="dashboard"
+        position="0 0.2 -0.9">
+         <TheDashboard/>
+      </a-entity>
 
     </template>
 

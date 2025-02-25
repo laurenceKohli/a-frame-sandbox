@@ -3,6 +3,8 @@
   import '../aframe/hide-in-vr.js';
   import '../aframe/simple-navmesh-constraint.js';
   import '../aframe/blink-controls.js';
+
+  import TheDashboard from './TheDashboard.vue';
 </script>
 
 <template>
@@ -55,6 +57,14 @@
           radius="0.02"
           visible="false">
         </a-sphere>
+
+        <a-entity
+          id="dashboard"
+          position="0 0.2 -0.9"
+        >
+          <TheDashboard/>
+        </a-entity>
+
       </a-entity>
 
       <a-entity
