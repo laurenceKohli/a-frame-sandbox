@@ -7,8 +7,11 @@
 
   const showOnboarding = ref(true);
 
+  import { startTimer } from '../stores/duckstore';
+
   function enterScene() {
     showOnboarding.value = false;
+    startTimer();
     if (AFRAME.utils.device.checkHeadsetConnected() && !AFRAME.utils.device.isMobile()) {
       document.querySelector('a-scene').enterVR();
     }

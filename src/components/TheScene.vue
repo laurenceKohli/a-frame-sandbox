@@ -6,6 +6,7 @@
 
   import TheCameraRig from './TheCameraRig.vue';
   import TheDashboard from './TheDashboard.vue';
+  import TheEndBoard from './TheEndBoard.vue';
   import TheWallsAndDoors from './TheWallsAndDoors.vue';
   import { positionDucks, ducksVisible, isCollected } from '../stores/duckstore.js';
 
@@ -117,7 +118,8 @@
         position="0 1.47 -0.9">
          <TheDashboard/>
       </a-entity> -->
-
+      
+      <TheEndBoard />
     </template>
 
     <TheCameraRig />
