@@ -6,7 +6,7 @@
 
   import TheCameraRig from './TheCameraRig.vue';
   import TheDashboard from './TheDashboard.vue';
-  import TheDoor from './TheDoor.vue';
+  import TheWallsAndDoors from './TheWallsAndDoors.vue';
   import { positionDucks, ducksVisible, isCollected } from '../stores/duckstore.js';
 
   const allAssetsLoaded = ref(false);
@@ -52,8 +52,24 @@
         Model license : CC BY 4.0 http://creativecommons.org/licenses/by/4.0/
         -->
       <a-asset-item id="duck-obj" src="./assets/models/low_poly_plstic_duck.glb"></a-asset-item>
+      <!--
+        Title : Open and Closed Door  
+        Sound Effect by <a href="https://pixabay.com/users/soundreality-31074404/?utm_source=link-attribution&utm_medium=referral&utm_campaign=music&utm_content=156814">Jurij</a> 
+        from <a href="https://pixabay.com/sound-effects//?utm_source=link-attribution&utm_medium=referral&utm_campaign=music&utm_content=156814">Pixabay</a>
+      -->
+      <audio id="door-sound" src="./assets/audio/open-and-closed-door-156814.mp3"></audio>
+
+      <!--
+        Title : Duck quacking
+        Sound Effect by <a href="https://pixabay.com/users/freesound_community-46691455/?utm_source=link-attribution&utm_medium=referral&utm_campaign=music&utm_content=37392">freesound_community</a> 
+        from <a href="https://pixabay.com//?utm_source=link-attribution&utm_medium=referral&utm_campaign=music&utm_content=37392">Pixabay</a>
+      -->
+      <audio id="duck-sound" src="./assets/audio/duck-quacking-37392.mp3"></audio>
+
+      <audio id="test-sound" src="./assets/sound1.mp3"></audio>
     </a-assets>
 
+    <a-sound src="#duck-sound" ref="playSoundDuck" autoplay="false"></a-sound>
     <a-gltf-model position="0 -0.85 -7.9" scale="1.05 1.05 1.05" src="#house-obj"></a-gltf-model>
     <template v-for="(pos, index) in positionDucks">
       <a-gltf-model 
@@ -62,8 +78,8 @@
         scale="0.2 0.2 0.2" rotation="0 90 0" src="#duck-obj"
         clickable
         obb-collider
-        @obbcollisionstarted="isCollected($event, index)"
-        @click="isCollected($event, index)"
+        @obbcollisionstarted="()=>{$refs.playSoundDuck.components.sound.playSound();isCollected($event, index)}"
+        @click="()=>{$refs.playSoundDuck.components.sound.playSound();isCollected($event, index)}"
         outline-on-event>
       </a-gltf-model>
     </template>
@@ -71,18 +87,19 @@
     <template v-if="allAssetsLoaded">
       <a-box color="red"></a-box>
 
+      <TheWallsAndDoors />
       <!-- <template v-for="(pos) in positionsTeleportation">
         <a-box color="green"
       :position="`${pos.x} ${pos.y} ${pos.z}`"
       scale="2 0.1 2"
       ></a-box>
-      </template>
+      </template> -->
       
-    <a-box color="green"
+    <!-- <a-box color="green"
       id="grille-2"
       position="-0.56 0 0"
       scale="2 0.1 2"
-      ></a-box> -->
+      ></a-box>  -->
 
 
       <a-box
@@ -94,96 +111,6 @@
         clickable
         outline-on-event>
       </a-box>
-      
-      <!-- <a-box
-        position="0.42 1.08 1.3"
-        material="color: blue"
-        scale="1.3 2.1 0.3"
-        clickable
-        click-handler
-        @click="goThrowDoor()">
-      </a-box> -->
-
-      
-    <TheDoor
-      position="0.42 1.08 1.15"
-      rotation="0 180 0"
-      :rot="180"
-      :x="0.63"
-      :y="0"
-      :z="2.48"
-      visible="false"
-    />
-
-    <TheDoor
-      position="0.42 1.08 1.57"
-      rotation="0 0 0"
-      :rot="0"
-      :x="0.63"
-      :y="0"
-      :z="0.35"
-      visible="false"
-    />
-
-    <TheDoor
-      position="-1.42 1.08 1.15"
-      rotation="0 180 0"
-      :rot="180"
-      :x="-1.63"
-      :y="0"
-      :z="2.48"
-      visible="false"
-    />
-
-    <TheDoor
-      position="-1.42 1.08 1.57"
-      rotation="0 0 0"
-      :rot="0"
-      :x="-1.63"
-      :y="0"
-      :z="0.35"
-      visible="false"
-    />
-
-    <TheDoor
-      position="-0.72 1.08 -5.6"
-      rotation="0 0 0"
-      :rot="0"
-      :x="-0.92"
-      :y="0"
-      :z="-6.8"
-      visible="false"
-    />
-
-    <TheDoor
-      position="-0.72 1.08 -5.95"
-      rotation="0 180 0"
-      :rot="180"
-      :x="-0.92"
-      :y="0"
-      :z="-4.75"
-      visible="false"
-    />
-
-    <TheDoor
-      position="-4.68 1.08 -2.65"
-      rotation="0 90 0"
-      :rot="90"
-      :x="-5.88"
-      :y="0"
-      :z="-2.45"
-      visible="false"
-    />
-
-    <TheDoor
-      position="-4.92 1.08 -2.65"
-      rotation="0 -90 0"
-      :rot="-90"
-      :x="-4.22"
-      :y="0"
-      :z="-2.45"
-      visible="false"
-    />
 
       <!-- <a-entity
         id="dashboard"

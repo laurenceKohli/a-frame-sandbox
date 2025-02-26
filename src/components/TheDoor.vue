@@ -23,7 +23,10 @@
       handleRotation: ${rot === false ? 'false' : 'true'};
       rot: ${rot === false ? 0 : rot};
     `"
+    @click="()=> {$refs.playSoundDoor.components.sound.playSound()}"
     >
+    
+    <a-sound src="#door-sound" ref="playSoundDoor" autoplay="false"></a-sound>
 
   </a-entity>
 </template>
