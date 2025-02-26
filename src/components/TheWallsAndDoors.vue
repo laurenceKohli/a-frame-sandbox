@@ -25,6 +25,14 @@ const walls = [
         ></a-box>
       </template>
 
+      <a-gltf-model 
+        position="2.05 0 0" 
+        scale="1 1 1" 
+        src="#door-obj"
+        rotation="0 90 0"
+      >
+      </a-gltf-model>
+
       <TheDoor
       position="0.42 1.08 1.15"
       rotation="0 180 0"
