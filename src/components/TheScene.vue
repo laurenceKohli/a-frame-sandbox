@@ -132,7 +132,5 @@
 
     <TheCameraRig />
 
-    
-
   </a-scene>
 </template>

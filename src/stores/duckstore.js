@@ -67,6 +67,8 @@ function stopTimer() {
   scores.push(endTimer.value)
   scoresTries = scores.sort((a, b) => convertTimeToSeconds(a) - convertTimeToSeconds(b)).slice(0, 3)
   clearInterval(timerInterval)
+  const endDoor = document.querySelector('#end-door');
+      endDoor.emit('click');
 }
 
 const scores = [

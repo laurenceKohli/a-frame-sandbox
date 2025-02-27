@@ -122,4 +122,15 @@ const walls = [
       :z="0"
       visible="false"
     />
+
+    <TheDoor
+      id="end-door"
+      position="10 1.08 0"
+      rotation="0 -90 0"
+      :rot="0"
+      :x="0"
+      :y="-20"
+      :z="0"
+      visible="false"
+    />
 </template>
