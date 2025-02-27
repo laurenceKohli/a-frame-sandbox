@@ -1,9 +1,9 @@
 import { ref } from 'vue';
 
 export const positionDucks = [
-    { x: -0.4, y: 0.88, z: -0.92 },
-    { x: -0.4, y: 0.86, z: -4 },
-    { x: 0.4, y: 0.52, z: -1.92 },
+    { x: -0.4, y: 0.88, z: -0.92, factor : 0.1 },
+    { x: -0.4, y: 0.86, z: -4, factor : 0.2 },
+    { x: 0.4, y: 0.52, z: -1.92, factor : 0.2 },
   ];
 
  export const ducksCollected = ref(0);
@@ -21,8 +21,8 @@ export const positionDucks = [
     }
     console.log('Canards collectés:', ducksCollected.value, '/', positionDucks.length);
 
-    // if (ducksCollected.value === positionDucks.length)
-    if (ducksCollected.value === 1) {
+    if (ducksCollected.value === positionDucks.length) {
+    // if(ducksCollected.value === 1) {
       stopTimer();
     }
   };
@@ -68,7 +68,7 @@ function stopTimer() {
   scoresTries = scores.sort((a, b) => convertTimeToSeconds(a) - convertTimeToSeconds(b)).slice(0, 3)
   clearInterval(timerInterval)
   const endDoor = document.querySelector('#end-door');
-      endDoor.emit('click');
+  endDoor.emit('click');
 }
 
 const scores = [

@@ -92,9 +92,9 @@
 
         <a-gltf-model 
          :position="`${pos.x} ${pos.y} ${pos.z}`"
-          scale="0.2 0.2 0.2" rotation="0 90 0" src="#duck-obj"
+          :scale="`${pos.factor} ${pos.factor} ${pos.factor}`" 
+          rotation="0 90 0" src="#duck-obj"
           :clickable="ducksVisible[index] ? '' : null"
-          :obb-collider="ducksVisible[index] ? '' : null"
           sound__obb="src: #duck-sound; on: obbcollisionstarted"
           sound__click="src: #duck-sound; on: click"
           @obbcollisionstarted="isCollected($event, index)"
