@@ -109,9 +109,9 @@ const walls = [
       position="2.04 1.08 0"
       rotation="0 -90 0"
       :rot="0"
-      :x="0"
-      :y="-20"
-      :z="0"
+      :x="20"
+      :y="0"
+      :z="20"
       visible="false"
     />
 
@@ -128,16 +128,26 @@ const walls = [
         rotation="0 180 0"
         scale="1 1 1"
       ></a-text>
-      </a-gltf-model>
+    </a-gltf-model>
 
     <TheDoor
       id="end-door"
       position="10 1.08 0"
       rotation="0 -90 0"
       :rot="0"
-      :x="0"
-      :y="-20"
-      :z="0"
+      :x="20"
+      :y="0"
+      :z="20"
       visible="false"
     />
+
+    <!-- Game room navigation mesh -->
+    <a-entity
+        data-role="nav-mesh"
+        geometry="primitive: plane; height: 20; width: 20"
+        position="-4 0 -4.2"
+        rotation="-90 0 0"
+        material="color: yellow"
+        visible="true"
+    ></a-entity>
 </template>

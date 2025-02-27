@@ -16,7 +16,7 @@ function exitImmersiveView() {
 
 <template>
     <a-entity
-        position="0 -20 0"
+        position="20 0 20"
         id="end-room"
     >
         <a-box id="floor"
@@ -151,4 +151,14 @@ function exitImmersiveView() {
             visible="false"
         />
     </a-entity>  
+
+    <!-- End room navigation mesh -->
+    <a-entity
+        data-role="nav-mesh"
+        geometry="primitive: plane; height: 10; width: 4"
+        position="20 0 16.64"
+        rotation="-90 0 0"
+        material="color: green"
+        visible="true"
+    ></a-entity>
 </template>
