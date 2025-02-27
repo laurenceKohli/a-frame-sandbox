@@ -25,14 +25,6 @@ const walls = [
         ></a-box>
       </template>
 
-      <a-gltf-model 
-        position="2.05 0 0" 
-        scale="1 1 1" 
-        src="#door-obj"
-        rotation="0 90 0"
-      >
-      </a-gltf-model>
-
       <TheDoor
       position="0.42 1.08 1.15"
       rotation="0 180 0"
@@ -122,6 +114,21 @@ const walls = [
       :z="0"
       visible="false"
     />
+
+    <a-gltf-model 
+        id="exit-door"
+        position="2.05 0 0" 
+        scale="1 1 1" 
+        src="#door-obj"
+        rotation="0 90 0"
+      >
+      <a-text 
+        value="Sortie" 
+        position="0.3 1.85 -0.03" 
+        rotation="0 180 0"
+        scale="1 1 1"
+      ></a-text>
+      </a-gltf-model>
 
     <TheDoor
       id="end-door"

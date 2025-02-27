@@ -1,5 +1,6 @@
 <script setup>
-import { endTimer, scoresTries } from '../stores/duckstore';
+import { ended, endTimer, scoresTries } from '../stores/duckstore';
+import TheDoor from './TheDoor.vue';
 
 function reloadView() {
   window.location.reload();
@@ -60,8 +61,13 @@ function exitImmersiveView() {
         >
         </a-gltf-model>
 
-        <a-text align="center" value="Votre temps" position="0 2.20 -8.58" color="black"></a-text>
-        <a-text align="center" :value="endTimer" position="0 1.70 -8.58" color="black"></a-text>
+        <a-entity v-if="ended" position="0 2.20 -8.58">
+            <a-text align="center" value="Votre temps" position="0 0 0" color="black"></a-text>
+            <a-text align="center" :value="endTimer" position="0 -0.50 0" color="black"></a-text>
+        </a-entity>
+        <a-entity v-else position="0 2.20 -8.58">
+            <a-text align="center" value="Continue le jeu" position="0 0 0" color="black"></a-text>
+        </a-entity>
 
         <a-box  
             position="-1.99 2.4 -3.75" 
@@ -97,8 +103,6 @@ function exitImmersiveView() {
             </a-entity>
         </a-gltf-model>
 
-
-
         <a-box  
             position="2.02 2.4 -5.75" 
             scale="0.5 0.2 0.11" 
@@ -117,6 +121,34 @@ function exitImmersiveView() {
             @click="exitImmersiveView()"
             rotation="0 -90 0"
             visible="false"
-        ></a-box>
-    </a-entity>
+        ></a-box> 
+        
+        <a-gltf-model v-if="!ended"
+            position="1.99 0 -0.7" 
+            scale="1 1 1" 
+            src="#door-obj"
+            rotation="0 90 0"
+        >
+        </a-gltf-model>  
+        
+        <a-box v-if="!ended"
+            position="2.02 2.4 -0.71" 
+            scale="0.5 0.2 0.11" 
+            material="color: blue"
+            rotation="0 -90 0"
+        >
+            <a-text align="center" value="Continuer" position="0 0 0.5"></a-text>
+        </a-box>
+
+        <TheDoor v-if="!ended"
+            id="back-door"
+            position="1.94 1.13 -0.7"
+            rotation="0 90 0"
+            :rot="90"
+            :x="1.35"
+            :y="0"
+            :z="0"
+            visible="false"
+        />
+    </a-entity>  
 </template>
