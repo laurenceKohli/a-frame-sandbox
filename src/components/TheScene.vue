@@ -1,5 +1,5 @@
 <script setup>
-  import { ref } from 'vue';
+  import { ref, watch } from 'vue';
   import '../aframe/simple-grab.js';
   import '../aframe/clickable.js';
   import '../aframe/outline.js';
@@ -8,7 +8,7 @@
   import TheDashboard from './TheDashboard.vue';
   import TheEndBoard from './TheEndBoard.vue';
   import TheWallsAndDoors from './TheWallsAndDoors.vue';
-  import { positionDucks, ducksVisible, isCollected } from '../stores/duckstore.js';
+  import { positionDucks, ducksVisible, isCollected, ended } from '../stores/duckstore.js';
 
   const allAssetsLoaded = ref(false);
 
@@ -58,6 +58,14 @@
         -->
       <a-asset-item id="duck-obj" src="./assets/models/low_poly_plstic_duck.glb"></a-asset-item>
       
+      <!--
+        Title : "School Board"
+        Model source : https://skfb.ly/oHxOP
+        Model author : Kroko.blend
+        Model license : CC BY 4.0 http://creativecommons.org/licenses/by/4.0/
+        -->
+      <a-asset-item id="board-obj" src="./assets/models/school_board.glb"></a-asset-item>
+
       <!--
         Title : Open and Closed Door  
         Sound Effect by <a href="https://pixabay.com/users/soundreality-31074404/?utm_source=link-attribution&utm_medium=referral&utm_campaign=music&utm_content=156814">Jurij</a> 
@@ -123,6 +131,8 @@
     </template>
 
     <TheCameraRig />
+
+    
 
   </a-scene>
 </template>

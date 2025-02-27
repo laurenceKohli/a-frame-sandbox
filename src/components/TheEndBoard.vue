@@ -1,5 +1,5 @@
 <script setup>
-import { endTimer } from '../stores/duckstore';
+import { endTimer, scoresTries } from '../stores/duckstore';
 
 function reloadView() {
   window.location.reload();
@@ -15,7 +15,9 @@ function exitImmersiveView() {
 
 <template>
     <a-entity
-    position="0 -20 0">
+        position="0 -20 0"
+        id="end-room"
+    >
         <a-box id="floor"
             position="0 0 -3.7"
             scale="4 0.1 10"
@@ -41,22 +43,22 @@ function exitImmersiveView() {
         </a-box>
 
         <a-box color="red"></a-box>
+            
+        <a-gltf-model 
+            position="1.99 0 -5.7" 
+            scale="1 1 1" 
+            src="#door-obj"
+            rotation="0 90 0"
+        >
+        </a-gltf-model>
         
-      <a-gltf-model 
-        position="1.99 0 -5.7" 
-        scale="1 1 1" 
-        src="#door-obj"
-        rotation="0 90 0"
-      >
-      </a-gltf-model>
-      
-      <a-gltf-model 
-        position="-1.99 0 -3.7" 
-        scale="1 1 1" 
-        src="#door-obj"
-        rotation="0 -90 0"
-      >
-      </a-gltf-model>
+        <a-gltf-model 
+            position="-1.99 0 -3.7" 
+            scale="1 1 1" 
+            src="#door-obj"
+            rotation="0 -90 0"
+        >
+        </a-gltf-model>
 
         <a-text align="center" value="Votre temps" position="0 2.20 -8.58" color="black"></a-text>
         <a-text align="center" :value="endTimer" position="0 1.70 -8.58" color="black"></a-text>
@@ -80,6 +82,22 @@ function exitImmersiveView() {
             rotation="0 90 0"
             visible="false"
         ></a-box>
+
+        <a-gltf-model
+            position="-2.01 1.35 -2.27"
+            scale="0.22 0.1 0.07"
+            src="#board-obj"
+            rotation="0 0 0"
+        >
+            <a-entity rotation="0 90 0" position="0.2 5.77 0" scale="4 4 4">
+                <a-text align="center" value="Meilleurs scores" scale="2 2 2" ></a-text>
+                <a-text align="center" :value="scoresTries[0]" :color="scoresTries[0] === endTimer ? 'red' : 'white'" position="0 -0.45 0"></a-text>
+                <a-text align="center" :value="scoresTries[1]" :color="scoresTries[1] === endTimer ? 'red' : 'white'" position="0 -0.77 0"></a-text>
+                <a-text align="center" :value="scoresTries[2]" :color="scoresTries[2] === endTimer ? 'red' : 'white'" position="0 -1.09 0"></a-text>
+            </a-entity>
+        </a-gltf-model>
+
+
 
         <a-box  
             position="2.02 2.4 -5.75" 

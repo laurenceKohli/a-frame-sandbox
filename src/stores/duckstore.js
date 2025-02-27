@@ -21,7 +21,8 @@ export const positionDucks = [
     }
     console.log('Canards collectés:', ducksCollected.value, '/', positionDucks.length);
 
-    if (ducksCollected.value === positionDucks.length) {
+    // if (ducksCollected.value === positionDucks.length)
+    if (ducksCollected.value === 1) {
       stopTimer();
     }
   };
@@ -63,5 +64,20 @@ function stopTimer() {
   endTimer.value = timerValue.value
   timerValue.value = '00:00:01'
   ended.value = true
+  scores.push(endTimer.value)
+  scoresTries = scores.sort((a, b) => convertTimeToSeconds(a) - convertTimeToSeconds(b)).slice(0, 3)
   clearInterval(timerInterval)
+}
+
+const scores = [
+  "00:00:51",
+  "00:00:55",
+  "00:00:15",
+]
+
+export let scoresTries = []
+
+function convertTimeToSeconds(time) {
+  const [h, m, s] = time.split(':')
+  return parseInt(h) * 3600 + parseInt(m) * 60 + parseInt(s)
 }
