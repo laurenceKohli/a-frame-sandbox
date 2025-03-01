@@ -1,9 +1,36 @@
 import { ref } from 'vue';
 
 export const positionDucks = [
-    { x: -0.4, y: 0.88, z: -0.92, factor : 0.1 },
-    { x: -0.4, y: 0.86, z: -4, factor : 0.2 },
-    { x: 0.4, y: 0.52, z: -1.92, factor : 0.2 },
+    { x: -0.4, y: 0.88, z: -0.92, factor : 0.1, rotation : 90 },
+    { x: -0.4, y: 0.86, z: -4, factor : 0.2, rotation : 90 },
+    { x: 0.4, y: 0.52, z: -1.92, factor : 0.2, rotation : 90 },
+    { x: 1.74, y: 0.54, z: -2.44, factor : 0.2, rotation : 90 },
+    {x: -3.07, y : 0.46, z : 0.47, factor : 0.1, rotation : -90},
+    {x : -2.41, y : 0.12 , z : 0.76, factor : 0.2, rotation : 180},
+    {x : -2.07, y : 0.62 , z : -1.89, factor : 0.2, rotation : 90},
+    {x : -3.2, y : 0.04 , z : -1.96, factor : 0.2, rotation : 90},
+    {x : -3.86, y : 0.04 , z : -5.03, factor : 0.1, rotation : 90},
+    {x : 0.01, y : 0.04 , z : -4.49, factor : 0.2, rotation : 35},
+    {x : -4.54, y : 0.7 , z : -4.42, factor : 0.1, rotation : 180},
+    {x : -1.37, y : 0.04 , z : -5.39, factor : 0.1, rotation : 180},
+    {x :1.42 , y : 0.04 , z : 3.76, factor : 0.1, rotation : 180},
+    {x : 1.28, y : 0.57 , z : 4, factor : 0.1, rotation : -90},
+    {x : 0.03, y : 0.55 , z : 3.23, factor : 0.2, rotation : 90},
+    {x : -0.36, y : 1.09 , z : 2.95, factor : 0.1, rotation : 180},
+    {x : -0.19, y : 0.71 , z : 2.30, factor : 0.1, rotation : 180},
+    {x : -0.31, y : 0.84 , z : 1.73, factor : 0.1, rotation : 90},
+    {x : 1.64, y : 0.98 , z : 1.56, factor : 0.1, rotation : 90},
+    {x : -0.70, y : 0.04 , z : 1.63, factor : 0.1, rotation : 90},
+    {x : -3.75, y : 1.86 , z : 1.89, factor : 0.1, rotation : 90},
+    {x : -4.12, y : 0.52 , z : 4.80, factor : 0.1, rotation : 180},
+    {x : -3.84, y : 0.59 , z : 1.68, factor : 0.1, rotation : 135},
+    {x : -8.87, y : 0.42 , z : -1.05, factor : 0.1, rotation : 75},
+    {x : -7.00, y : 0.04 , z : -0.62, factor : 0.1, rotation : 0},
+    {x : -6.04, y : 0.04 , z : -4.84, factor : 0.1, rotation : 0},
+    {x : -1.98, y : 0.04 , z : -6.40, factor : 0.1, rotation : -90},
+    {x : 1.10, y : 0.67 , z : -8.57, factor : 0.1, rotation : -90},
+    {x : -0.10, y : 0.59 , z : -9.97, factor : 0.1, rotation : 45},
+    {x : 1.07, y : 0.04 , z : -7.57, factor : 0.2, rotation : 90}
   ];
 
  export const ducksCollected = ref(0);
@@ -72,12 +99,13 @@ function stopTimer() {
 }
 
 const scores = [
-  "00:00:51",
-  "00:00:55",
-  "00:00:15",
+  "00:10:51",
+  "00:15:55",
+  "00:10:15",
 ]
 
 export let scoresTries = []
+scoresTries = scores.sort((a, b) => convertTimeToSeconds(a) - convertTimeToSeconds(b)).slice(0, 3)
 
 function convertTimeToSeconds(time) {
   const [h, m, s] = time.split(':')

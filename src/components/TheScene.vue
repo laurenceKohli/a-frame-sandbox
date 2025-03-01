@@ -84,16 +84,17 @@
 
     <!-- <a-sound src="#duck-sound" ref="playSoundDuck" autoplay="false"></a-sound> -->
     <a-gltf-model position="0 -0.85 -7.9" scale="1.05 1.05 1.05" src="#house-obj"></a-gltf-model>
-    <a-gltf-model position="0 -0.85 -7.9" scale="1.05 1.05 1.05" src="#door-obj"></a-gltf-model>
     
     <template v-if="allAssetsLoaded">
 
       <template v-for="(pos, index) in positionDucks">
 
         <a-gltf-model 
-         :position="`${pos.x} ${pos.y} ${pos.z}`"
+          :id="`duck-${index}`"
+          :position="`${pos.x} ${pos.y} ${pos.z}`"
           :scale="`${pos.factor} ${pos.factor} ${pos.factor}`" 
-          rotation="0 90 0" src="#duck-obj"
+          :rotation="`0 ${pos.rotation} 0`"
+          src="#duck-obj"
           :clickable="ducksVisible[index] ? '' : null"
           sound__obb="src: #duck-sound; on: obbcollisionstarted"
           sound__click="src: #duck-sound; on: click"
@@ -105,7 +106,7 @@
         </a-gltf-model>
       </template>
 
-      <a-box color="red"></a-box>
+      <!-- <a-box color="red"></a-box> -->
 
       <TheWallsAndDoors />
       <!-- <template v-for="(pos) in positionsTeleportation">
