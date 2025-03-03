@@ -1,28 +1,15 @@
 <script setup>
-  import { ref, watch } from 'vue';
+  import { ref } from 'vue';
   import '../aframe/simple-grab.js';
   import '../aframe/clickable.js';
   import '../aframe/outline.js';
 
   import TheCameraRig from './TheCameraRig.vue';
-  import TheDashboard from './TheDashboard.vue';
   import TheEndBoard from './TheEndBoard.vue';
   import TheWallsAndDoors from './TheWallsAndDoors.vue';
   import { positionDucks, ducksVisible, isCollected, ended } from '../stores/duckstore.js';
 
   const allAssetsLoaded = ref(false);
-
-  const positionsTeleportation = [
-    { x: 0.56, y: 0, z: 0 },
-    { x: 0.55, y: 0, z: -2.04 },
-    {x: -3.43, y : 0, z : 0.09},
-    {x : -1.4, y : 0 , z : 0.2},
-    {x : -1.52, y : 0 , z : -2.09},
-    {x : -3.81, y : 0 , z : -2.04},
-    {x : -3.54, y : 0 , z : -4.7},
-    {x : -0.52, y : 0 , z : -4.72},
-    {x : 0.63, y : 0 , z : 2.48},
-  ];
 
 </script>
 
@@ -107,24 +94,12 @@
       <!-- <a-box color="red"></a-box> -->
 
       <TheWallsAndDoors />
-      <!-- <template v-for="(pos) in positionsTeleportation">
-        <a-box color="green"
-      :position="`${pos.x} ${pos.y} ${pos.z}`"
-      scale="2 0.1 2"
-      ></a-box>
-      </template> -->
       
     <!-- <a-box color="green"
       id="grille-2"
       position="-0.56 0 0"
       scale="2 0.1 2"
       ></a-box>  -->
-
-      <!-- <a-entity
-        id="dashboard"
-        position="0 1.47 -0.9">
-         <TheDashboard/>
-      </a-entity> -->
       
       <TheEndBoard />
     </template>

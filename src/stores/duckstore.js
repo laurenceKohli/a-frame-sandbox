@@ -66,7 +66,7 @@ export const positionDucks = [
  * 
  * Le timer démarre automatiquement lorsque le jeu démarre et s'arrête lorsque le dernier canard est collecté.
  */
-export const isTimerRunning = ref(false)
+const isTimerRunning = ref(false)
 const timerValue = ref('00:00:01')
 export const endTimer = ref(0)
 export const ended = ref(false)
