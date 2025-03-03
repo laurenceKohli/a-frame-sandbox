@@ -144,10 +144,10 @@ const walls = [
     <!-- Game room navigation mesh -->
     <a-entity
         data-role="nav-mesh"
-        geometry="primitive: plane; height: 20; width: 20"
-        position="-4 0 -4.2"
+        geometry="primitive: plane; height: 14.02; width: 15.53"
+        position="-4.62 0 -2.23.38"
         rotation="-90 0 0"
         material="color: yellow"
-        visible="true"
+        visible="false"
     ></a-entity>
 </template>
