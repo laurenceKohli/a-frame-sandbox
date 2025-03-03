@@ -68,21 +68,19 @@
 
       <!--
         Title : Open and Closed Door  
-        Sound Effect by <a href="https://pixabay.com/users/soundreality-31074404/?utm_source=link-attribution&utm_medium=referral&utm_campaign=music&utm_content=156814">Jurij</a> 
+        Sound Effect by <a href="https://pixabay.com/users/soundreality-31074404/">Jurij</a> 
         from <a href="https://pixabay.com/sound-effects//?utm_source=link-attribution&utm_medium=referral&utm_campaign=music&utm_content=156814">Pixabay</a>
       -->
-      <!-- <audio id="door-sound" src="./assets/audio/open-and-closed-door-156814.mp3"></audio> -->
       <a-asset-item id="door-sound" response-type="arraybuffer" src="./assets/audio/open-and-closed-door-156814.mp3" preload="auto"></a-asset-item>
       
       <!--
         Title : Duck quacking
-        Sound Effect by <a href="https://pixabay.com/users/freesound_community-46691455/?utm_source=link-attribution&utm_medium=referral&utm_campaign=music&utm_content=37392">freesound_community</a> 
+        Sound Effect by <a href="https://pixabay.com/users/freesound_community-46691455/">freesound_community</a> 
         from <a href="https://pixabay.com//?utm_source=link-attribution&utm_medium=referral&utm_campaign=music&utm_content=37392">Pixabay</a>
       -->
       <a-asset-item id="duck-sound" response-type="arraybuffer" src="./assets/audio/duck-quacking-37392.mp3" preload="auto"></a-asset-item>
     </a-assets>
 
-    <!-- <a-sound src="#duck-sound" ref="playSoundDuck" autoplay="false"></a-sound> -->
     <a-gltf-model position="0 -0.85 -7.9" scale="1.05 1.05 1.05" src="#house-obj"></a-gltf-model>
     
     <template v-if="allAssetsLoaded">

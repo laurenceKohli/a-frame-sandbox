@@ -22,11 +22,18 @@
 <template>
   <div id="onboarding" v-if="showOnboarding">
     <div>
-      <h1>A-Frame + Vite + Vue Boilerplate</h1>
+      <h1>The hidden ducks</h1>
       <p v-if="!loaded">loading...</p>
       <button v-if="loaded" @click="enterScene()">Enter scene</button>
       <div class="licences">
         <section>
+          <h4>Game Goal</h4>
+          <ul>
+            <li>
+              Find all hidden ducks in the house
+            </li>
+          </ul>
+
           <h4>Movement modes support</h4>
           <ul>
             <li>
@@ -39,13 +46,15 @@
             </li>
             <li>
               VR/AR – walk + Teleport (Grip for grab and laser for
-              click) + Gaze cursor for click
+              click) + Gaze cursor for click or touch on right controller 
+              + X to see dashboard on left controller
             </li>
           </ul>
         </section>
         <section>
           <h4>Source code</h4>
-          <blockquote><a href="https://github.com/Chabloz/a-frame-vite-vue-boilerplate">Github repo</a></blockquote>
+          <blockquote><a href="https://github.com/laurenceKohli/a-frame-sandbox/tree/project">Github repo (branch project)</a></blockquote>
+          Based on <blockquote><a href="https://github.com/Chabloz/a-frame-vite-vue-boilerplate">A-frame vite vue boilerplate from Chabloz (fork)</a></blockquote>
         </section>
         <dl>
           <dt>
@@ -95,6 +104,47 @@
             under <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank">CC BY 4.0</a>
           </dd>
 
+          <dt>
+            <a href="https://skfb.ly/6WQMC" target="_blank">Isometric low poly house</a>
+          </dt><dd>
+            by <a href="https://sketchfab.com/demolitionterminator" target="_blank">demolitionterminator</a>
+            under <a href="http://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY NC 4.0</a>
+          </dd>
+
+          <dt>
+            <a href="https://skfb.ly/or7xw" target="_blank">Low-Poly Door</a>
+          </dt><dd>
+            by <a href="https://sketchfab.com/NoobiePie" target="_blank">TheGuy</a>
+            under <a href="http://creativecommons.org/licenses/by/4.0/" target="_blank">CC BY 4.0</a>
+          </dd>
+
+          <dt>
+            <a href="https://skfb.ly/oHIXt" target="_blank">Low poly plstic duck</a>
+          </dt><dd>
+            by <a href="https://sketchfab.com/surnev.danya" target="_blank">surnev.danya</a>
+            under <a href="http://creativecommons.org/licenses/by/4.0/" target="_blank">CC BY 4.0</a>
+          </dd>
+
+          <dt>
+            <a href="https://skfb.ly/oHxOP" target="_blank">School Board</a>
+          </dt><dd>
+            by <a href="https://sketchfab.com/jaromir.ternavskiy" target="_blank">Kroko.blend</a>
+            under <a href="http://creativecommons.org/licenses/by/4.0/" target="_blank">CC BY 4.0</a>
+          </dd>
+
+          <dt>
+            <a href="https://pixabay.com/sound-effects/open-and-closed-door-156814/" target="_blank">Open and Closed Door Sound</a>
+          </dt><dd>
+            by <a href="https://pixabay.com/users/soundreality-31074404/" target="_blank">Jurij</a>
+            from <a href="https://pixabay.com/" target="_blank">Pixabay</a>
+          </dd>
+
+          <dt>
+            <a href="https://pixabay.com/sound-effects/duck-quacking-37392/" target="_blank">Duck quacking Sound</a>
+          </dt><dd>
+            by <a href="https://pixabay.com/users/freesound_community-46691455/" target="_blank">freesound_community</a>
+            from <a href="https://pixabay.com/" target="_blank">Pixabay</a>
+          </dd>
         </dl>
       </div>
     </div>
