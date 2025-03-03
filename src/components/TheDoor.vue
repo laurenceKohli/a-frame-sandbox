@@ -23,7 +23,7 @@
       handleRotation: ${rot === false ? 'false' : 'true'};
       rot: ${rot === false ? 0 : rot};
     `"
-    sound="src: #door-sound; on: click"
+    sound="src: #door-sound; on: click; volume: 1.5"
     >
   </a-entity>
 </template>

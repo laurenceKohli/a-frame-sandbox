@@ -3,6 +3,7 @@
   import '../aframe/simple-grab.js';
   import '../aframe/clickable.js';
   import '../aframe/outline.js';
+  import '../aframe/listen-to.js';
 
   import TheCameraRig from './TheCameraRig.vue';
   import TheEndBoard from './TheEndBoard.vue';
@@ -66,6 +67,13 @@
         from <a href="https://pixabay.com//?utm_source=link-attribution&utm_medium=referral&utm_campaign=music&utm_content=37392">Pixabay</a>
       -->
       <a-asset-item id="duck-sound" response-type="arraybuffer" src="./assets/audio/duck-quacking-37392.mp3" preload="auto"></a-asset-item>
+
+      <!--
+        Title : "Epical Background Music"
+        Music by <a href="https://pixabay.com/users/sigmamusicart-36860929/?utm_source=link-attribution&utm_medium=referral&utm_campaign=music&utm_content=295028">Mikhail Smusev</a> 
+        from <a href="https://pixabay.com//?utm_source=link-attribution&utm_medium=referral&utm_campaign=music&utm_content=295028">Pixabay</a>
+      -->
+        <a-asset-item id="background-sound" response-type="arraybuffer" src="./assets/audio/epical-background-music-295028.mp3" preload="auto"></a-asset-item>
     </a-assets>
 
     <a-gltf-model position="0 -0.85 -7.9" scale="1.05 1.05 1.05" src="#house-obj"></a-gltf-model>
@@ -81,8 +89,8 @@
           :rotation="`0 ${pos.rotation} 0`"
           src="#duck-obj"
           :clickable="ducksVisible[index] ? '' : null"
-          sound__obb="src: #duck-sound; on: obbcollisionstarted"
-          sound__click="src: #duck-sound; on: click"
+          sound__obb="src: #duck-sound; on: obbcollisionstarted; volume: 1.5"
+          sound__click="src: #duck-sound; on: click; volume: 1.5"
           @obbcollisionstarted="isCollected($event, index)"
           @click="isCollected($event, index)"
           outline-on-event
@@ -93,6 +101,10 @@
 
       <!-- <a-box color="red"></a-box> -->
 
+      <a-entity
+        id="game-sound"
+        listen-to="target: a-scene; event : enter-scene; emit : play-sound"
+        sound="src: #background-sound; on : play-sound; loop : true; positional : false; volume: 0.2"></a-entity>
       <TheWallsAndDoors />
       
     <!-- <a-box color="green"
