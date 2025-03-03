@@ -22,39 +22,39 @@
 <template>
   <div id="onboarding" v-if="showOnboarding">
     <div>
-      <h1>The hidden ducks</h1>
-      <p v-if="!loaded">loading...</p>
-      <button v-if="loaded" @click="enterScene()">Enter scene</button>
+      <h1>Chasse aux canards</h1>
+      <p v-if="!loaded">chargement...</p>
+      <button v-if="loaded" @click="enterScene()">Débuter le jeu</button>
       <div class="licences">
         <section>
-          <h4>Game Goal</h4>
+          <h4>But du jeu</h4>
           <ul>
             <li>
-              Find all hidden ducks in the house
+              Trouve tous les canards cachés dans la maison
             </li>
           </ul>
 
           <h4>Movement modes support</h4>
           <ul>
             <li>
-              Desktop – Keyboard for move (WASD or Arrows keys) + Mouse for look
-              control (Drag and drop)
+              Desktop – Clavier pour se déplacer (WASD ou touches fléchées) + Souris pour regarder
+              autour et clic pour attraper un canard
             </li>
             <li>
-              Mobile – 1x Finger touch to go forward + 2x Fingers touch to go
-              backward + Gaze cursor for click
+              Mobile – 1 doigt pour avancer + 2 doigts pour reculer
+              + Curseur de regard pour tourner et pour collecter (quand il est noir, il suffit d'attendre un peu)
             </li>
             <li>
-              VR/AR – walk + Teleport (Grip for grab and laser for
-              click) + Gaze cursor for click or touch on right controller 
-              + X to see dashboard on left controller
+              VR/AR – marcher + Téléportation (Grip pour saisir et laser pour
+              cliquer) + Curseur de regard pour cliquer ou toucher sur la manette droite
+              + X pour voir le tableau de bord sur la manette gauche
             </li>
           </ul>
         </section>
         <section>
-          <h4>Source code</h4>
-          <blockquote><a href="https://github.com/laurenceKohli/a-frame-sandbox/tree/project">Github repo (branch project)</a></blockquote>
-          Based on <blockquote><a href="https://github.com/Chabloz/a-frame-vite-vue-boilerplate">A-frame vite vue boilerplate from Chabloz (fork)</a></blockquote>
+          <h4>Code source</h4>
+          <blockquote><a href="https://github.com/laurenceKohli/a-frame-sandbox/tree/project">repo Github (branche project)</a></blockquote>
+          Basé sur <blockquote><a href="https://github.com/Chabloz/a-frame-vite-vue-boilerplate">A-frame vite vue boilerplate de Chabloz (fork)</a></blockquote>
         </section>
         <dl>
           <dt>

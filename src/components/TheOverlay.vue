@@ -1,28 +1,13 @@
 <script setup>
-  import { computed } from 'vue';
+  import { ducksCollected, ducksTotal } from '../stores/duckstore';
 
-  const props = defineProps({
-    modelValue: {
-      type: [Number],
-      default: 1,
-    },
-  });
-
-  const emit = defineEmits([
-    'update:modelValue',
-  ]);
-
-  const value = computed({
-    get: () => props.modelValue,
-    set: val => emit('update:modelValue', val),
-  });
 </script>
 
 <template>
   <div>
     <dl id="debug">
-      <dt>scale: {{ value }}</dt>
-      <input v-model.number="value" type="range" min="0.2" max="1" step="0.05">
+      <dt>Canards collectés</dt>
+      <dt> {{ ducksCollected  }} / {{ ducksTotal }}</dt>
     </dl>
   </div>
 </template>
@@ -33,13 +18,14 @@
 
   #debug {
     position: absolute;
-    left: 20px;
-    bottom: 20px;
+    right: 20px;
+    top: 20px;
     background-color: black;
     color: white;
     width: auto;
     padding: 0.5rem 1rem;
     font-family: monospace;
+    z-index: inherit;
   }
   dt {
     margin-top: 0.5rem;

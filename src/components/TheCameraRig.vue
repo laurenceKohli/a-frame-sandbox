@@ -34,7 +34,7 @@
           geometry="primitive: circle; radius: 0.0003;"
           material="shader: flat; color: white;"
           cursor
-          raycaster="far: 1; objects: [clickable]; showLine: false;"
+          raycaster="far: 2; objects: [clickable]; showLine: false;"
           position="0 0 -0.1"
           disable-in-vr="component: raycaster; disableInAR: false;"
           hide-in-vr="hideInAR: false"
