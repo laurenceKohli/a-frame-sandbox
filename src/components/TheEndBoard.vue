@@ -43,7 +43,7 @@ function exitImmersiveView() {
             material="color: white">
         </a-box>
 
-        <a-box color="red"></a-box>
+        <!-- <a-box color="red"></a-box> -->
             
         <a-gltf-model 
             position="1.99 0 -5.7" 

@@ -5,6 +5,14 @@
   import '../aframe/blink-controls.js';
 
   import TheDashboard from './TheDashboard.vue';
+  import { ended } from '../stores/duckstore.js';
+  import { ref } from 'vue';
+
+  const isDashboardVisible = ref(false);
+
+  function toggleDashboard() {
+      isDashboardVisible.value = !isDashboardVisible.value;
+  }
 </script>
 
 <template>
@@ -51,6 +59,7 @@
           collisionEntities: [data-role='nav-mesh'];
           snapTurn: false;
         "
+        @xbuttondown="toggleDashboard"
         position="0 1.5 0"
       >
         <a-sphere id="hand-left-collider"
@@ -58,9 +67,10 @@
           visible="false">
         </a-sphere>
 
-        <a-entity
+        <a-entity v-if="!ended && isDashboardVisible"
         id="dashboard"
-        position="0 0.3 -0.5" rotation="0 0 0">
+        position="0 0.3 -0.5" rotation="0 0 0"
+        >
          <TheDashboard/>
       </a-entity>
 
