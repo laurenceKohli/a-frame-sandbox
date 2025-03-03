@@ -145,6 +145,13 @@
             by <a href="https://pixabay.com/users/freesound_community-46691455/" target="_blank">freesound_community</a>
             from <a href="https://pixabay.com/" target="_blank">Pixabay</a>
           </dd>
+          
+          <dt>
+            <a href="https://pixabay.com/music/epical-background-music-295028/" target="_blank">Epical Background Music</a>
+          </dt><dd>
+            by <a href="https://pixabay.com/users/sigmamusicart-36860929/" target="_blank">Mikhail Smusev</a>
+            from <a href="https://pixabay.com/" target="_blank">Pixabay</a>
+          </dd>
         </dl>
       </div>
     </div>
